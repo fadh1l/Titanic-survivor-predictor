@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="Sex" placeholder="Gender" required="required">
+        <input type="text" name="Pclass" placeholder="Passenger Class" required="required">
+        <input type="text" name="Age" placeholder="How Old are you?" required="required">
+        <input type="text" name="Title" placeholder="What is your title" required="required">
+        <input type="text" name="Embarked" placeholder="Embarked from?" required="required">
+        <button class="btn" type="text">Predict</button>
+    </form>
+    <br>
+    <br>
+    {{prediction_text}}
+</body>
+</html>

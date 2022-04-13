@@ -1,34 +1,35 @@
 {% extends "base.html" %} {% block head %}
 <title>homepage</title>
 {% endblock %} {% block body %}
-<div class="jumbotron">
+<div class="container d-flex align-items-center>
   <div class="row">
-    <div class="col-md-4">
-      <h1 class="display-2">Titanic Survival Predictor</h1>
+    <div class="col-md-8 mx-auto">
+      <br><br>
+      <h1 class="display-2">Test Your Luck!</h1>
     </div>
   </div>
   <br /><br />
   <div class="row">
-    <div class="col-md-12">
-      <p class="lead">
-        This is a simple web application that predicts the survival of
-        passengers on the Titanic.
+    <div class="col-md-8 mx-auto">
+      <p class="lead text-white">
+        This is a website that assumes you are a passenger on the Titanic Ship that tragically sunk.
+        Under the hood it uses a random forest classifier which has been trained on data already available about the passengers to predict if you will survive or not.
       </p>
     </div>
   </div>
   <hr />
 
-  <div class="row">
-    <div class="col-md-12">
-      <form action="{{ url_for('predict')}}" method="post">
+  <div class="container center_div">
+    <div class="col-md-8 mx-auto">
+      <form action="{{ url_for('predict')}}" method="post" role="form">
         
-<div class="input-group mb-3">
+        <div class="input-group mb-3">
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01"
               >Passenger Class</label
             >
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="inputGroupSelect01" name="Pclass">
             <option value="1">First Class</option>
             <option value="2">Second Class</option>
             <option value="3">Third Class</option>
@@ -40,24 +41,51 @@
               >Gender</label
             >
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" id="inputGroupSelect01" name="Sex">
             <option value="0">Male</option>
             <option value="1">Female</option>
           </select>
         </div>
-<div class="input-group mb-3">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter your age" name="Age">
+        </div>
+          <p class="text-white">
+          The title data helps the model better understand the characteristics of the passenger.
+        </p>
+        <div class="input-group mb-3">
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01"
               >What is your title? </label
             >
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          
+          <select class="custom-select" id="inputGroupSelect01" name="Title">
             <option value="1">Mr</option>
             <option value="2">Miss</option>
             <option value="3">Mrs</option>
             <option value="4">Master</option>
             <option value="5">Other</option>
 
+          </select>
+        </div>
+        <p class="text-white">
+          There are mainly three places from where the passengers embarked from:
+          <ul>
+            <li>Southampton</li>
+            <li>Cherbourg</li>
+            <li>Queenstown</li>
+          </ul>
+        </p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Where did you start from? </label
+            >
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="Embarked">
+            <option value="0">Southampton</option>
+            <option value="1">Cherbourg</option>
+            <option value="2">Queenstown</option>
           </select>
         </div>
         <button class="btn btn-lg btn-primary" type="text">Predict</button>

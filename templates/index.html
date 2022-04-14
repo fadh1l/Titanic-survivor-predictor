@@ -1,24 +1,15 @@
 {% extends "base.html" %} {% block head %}
 <title>homepage</title>
 {% endblock %} {% block body %}
-<div class=" row">
-    <div class="mx-auto text-center">
-        <br><br>
-        <h1 class="display-2">Test Your Luck!</h1>
-    </div>
-</div>
-
-<br /><br />
 
 <div class="row">
     <div class="col-md-8 mx-auto col-sm-4">
-        <p class="lead text-white p-4">
-            This is a website that assumes you are a passenger on the Titanic Ship that tragically sunk. Under the hood it uses a random forest classifier which has been trained on data already available about the passengers to predict if you will survive or not.
+        <p class="lead text-white p-4 text-center">
+            This is a website that assumes you are a passenger on the Titanic Ship that tragically sunk, it uses machine learning to predict the chance of surviving.
         </p>
     </div>
 </div>
 
-<hr />
 
 <div class="col-md-4 mx-auto">
     <form action="{{ url_for('predict')}}" method="POST">
@@ -46,7 +37,7 @@
         </div>
         <p class="text-white">
             There are mainly three places from where the passengers embarked from:
-            <ul>
+            <ul class="text-white">
                 <li>Southampton</li>
                 <li>Cherbourg</li>
                 <li>Queenstown</li>
@@ -78,16 +69,24 @@
               <option value="5">Other</option>
             </select>
         </div>
+        <br>
         <div class="row col-md-8 mx-auto">
-            <button class="btn btn-primary" type="text">Predict</button>
+            <button class="btn btn-outline-info" type="text">Predict</button>
         </div>
         <br>
         <div class="row col-md-8 mx-auto">
             <a href=" / " class="btn btn-outline-danger " role="button ">Reset</a>
         </div>
-    </form>
-    <br><br>
-    <h1 class="display-2 ">{{prediction_text}}</h1>
-    <br>
+        <br>
+        <div class="row col-md-8 mx-auto">
+            <a href=" / " class="btn btn-outline-success " role="button ">About the project and me</a>
+        </div>
+
+</div>
+</div>
+</form>
+<br><br>
+<h1 class="display-2 text-white text-center">{{prediction_text}}</h1>
+<br>
 </div>
 {% endblock %}

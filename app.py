@@ -16,9 +16,9 @@ def predict():
     df = pd.DataFrame(final_features, columns = ['Pclass','Sex','Age','Embarked','Title'])
     prediction = model.predict(df)
     if prediction == 1:
-        return render_template('index.html', prediction_text='Hurrah! you survived!')
+        return render_template('index.html', prediction_text='Hurray, you\'ll live!')
     else:
-        return render_template('index.html', prediction_text='Sadly, you don\'t survive..')
+        return render_template('index.html', prediction_text='Sadly, you don\'t survive...')
     
 
 if __name__ == "__main__":

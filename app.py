@@ -18,7 +18,7 @@ def predict():
     if prediction == 1:
         return render_template('index.html', prediction_text='Hurray, you\'ll live!')
     else:
-        return render_template('index.html', prediction_text='Sadly, you don\'t survive...')
+        return render_template('index.html', prediction_text='Sadly, you don\'t survive..')
     
 
 if __name__ == "__main__":
